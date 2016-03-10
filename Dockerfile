@@ -19,14 +19,13 @@ ENV PATH=/root/miniconda2/bin:$PATH
 RUN conda create --name keras python=3
 
 RUN source activate keras
-
-RUN conda install -y \
+  && conda install -y \
     h5py \
     pandas \
     scikit-learn \
     quandl
-
-RUN pip install --no-deps git+git://github.com/Theano/Theano.git \
+RUN source activate keras \
+  && pip install --no-deps git+git://github.com/Theano/Theano.git \
   && pip install git+git://github.com/pykalman/pykalman.git \
   && pip install keras \
   && pip install hyperopt
