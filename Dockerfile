@@ -18,7 +18,7 @@ ENV PATH=/root/miniconda2/bin:$PATH
 
 RUN conda create --name keras python=3
 
-RUN source activate keras
+RUN . activate keras
 
 RUN conda install -y \
     h5py \
