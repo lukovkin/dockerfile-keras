@@ -23,9 +23,10 @@ RUN source activate keras
 RUN conda install -y \
     h5py \
     pandas \
-    hyperopt \
-    pykalman \
+    scikit-learn \
     quandl
 
 RUN pip install --no-deps git+git://github.com/Theano/Theano.git \
-  && pip install keras
+  && pip install git@github.com:pykalman/pykalman.git \
+  && pip install keras \
+  && pip install hyperopt
