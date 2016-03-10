@@ -14,9 +14,16 @@ RUN curl -qsSLkO \
 
 ENV PATH=/root/miniconda2/bin:$PATH
 
+RUN conda create --name keras python=3
+
+RUN source activate keras
+
 RUN conda install -y \
     h5py \
     pandas \
-    theano \
-  && pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git \
+    hyperopt \
+    pykalman \
+    quandl
+
+RUN pip install --no-deps git+git://github.com/Theano/Theano.git \
   && pip install keras
