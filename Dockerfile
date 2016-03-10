@@ -28,4 +28,4 @@ RUN source activate keras \
   && pip install --no-deps git+git://github.com/Theano/Theano.git \
   && pip install git+git://github.com/pykalman/pykalman.git \
   && pip install keras \
-  && pip install hyperopt
+  && pip install git+git://github.com/hyperopt/hyperopt.git
