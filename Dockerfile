@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN /bin/bash
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends \
@@ -18,7 +18,7 @@ ENV PATH=/root/miniconda2/bin:$PATH
 
 RUN conda create --name keras python=3
 
-RUN . activate keras
+RUN source activate keras
 
 RUN conda install -y \
     h5py \
