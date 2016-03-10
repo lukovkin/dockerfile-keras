@@ -27,6 +27,6 @@ RUN conda install -y \
     quandl
 
 RUN pip install --no-deps git+git://github.com/Theano/Theano.git \
-  && pip install git+git@github.com:pykalman/pykalman.git \
+  && pip install git+git://github.com/pykalman/pykalman.git \
   && pip install keras \
   && pip install hyperopt
